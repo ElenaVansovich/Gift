@@ -4,6 +4,10 @@ import giftCreator.CreatorGift;
 import sweetTypes.*;
 import sweets.Sweet;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,25 +15,50 @@ import java.util.List;
  * Created by Elena on 10.10.2016.
  */
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader("date.txt"));
+
+        String line;
 
         List<Sweet> gift = new ArrayList<>();
-
-        Sweet sweet1 = new Butterscotch("Iris kitty", 5, 3, 5, 1);
-
-        Sweet sweet2 = new Chocolate("Shokolapki", 6.5, 4, 7, 2);
-
-        Sweet sweet3 = new Jelly("Jelly bears", 4.96, 3, 6, 2);
-
-        Sweet sweet4 = new Liqueur("Capital", 8, 4, 7, 2);
-
-        Sweet sweet5 = new Wafer("Aeroflot", 4, 3, 5, 0.5);
-
-        gift.add(sweet1);
-        gift.add(sweet2);
-        gift.add(sweet3);
-        gift.add(sweet4);
-        gift.add(sweet5);
+        while ((line = reader.readLine()) != null) {
+            if(line.equals("Butterscotch")){
+                gift.add(new Butterscotch(reader.readLine(),
+                                        Double.parseDouble(reader.readLine()),
+                                        Double.parseDouble(reader.readLine()),
+                                        Double.parseDouble(reader.readLine()),
+                                        Double.parseDouble(reader.readLine())));
+            }
+            if(line.equals("Chocolate")){
+                gift.add(new Chocolate(reader.readLine(),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine())));
+            }
+            if(line.equals("Jelly")){
+                gift.add(new Jelly(reader.readLine(),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine())));
+            }
+            if(line.equals("Liqueur")){
+                gift.add(new Jelly(reader.readLine(),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine())));
+            }
+            if(line.equals("Wafer")){
+                gift.add(new Jelly(reader.readLine(),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine()),
+                        Double.parseDouble(reader.readLine())));
+            }
+        }
 
         CreatorGift creator = new CreatorGift();
 

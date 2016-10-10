@@ -1,0 +1,30 @@
+Butterscotch
+Iris kitty
+5
+3
+5
+1
+Chocolate
+Shokolapki
+6.5
+4
+7
+2
+Jelly
+Jelly bears
+4.96
+3
+6
+2
+Liqueur
+Capital
+8
+4
+7
+2
+Wafer
+Aeroflot
+4
+3
+5
+0.5
