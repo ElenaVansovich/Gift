@@ -1,13 +1,11 @@
-package sweetTypes;
-
-import sweets.Sweet;
+package sweets;
 
 /**
  * Created by Elena on 10.10.2016.
  */
 public class Liqueur extends Sweet {
 
-    private double liqeueur;
+    private double liqueur;
 
     public Liqueur(){
         super();
@@ -18,25 +16,25 @@ public class Liqueur extends Sweet {
      * @param price
      * @param sugar
      * @param weight
-     * @param liqeueur
+     * @param liqueur
      */
-    public Liqueur(String name, double price, double sugar, double weight, double liqeueur){
+    public Liqueur(String name, double price, double sugar, double weight, double liqueur){
         super(name, price, sugar, weight);
-        this.liqeueur = liqeueur;
+        this.liqueur = liqueur;
     }
 
     /**
      * @return
      */
     public double getLiqueur() {
-        return liqeueur;
+        return liqueur;
     }
 
     /**
-     * @param liqeueur
+     * @param liqueur
      */
-    public void setLiqueur(double liqeueur) {
-        this.liqeueur = liqeueur;
+    public void setLiqueur(double liqueur) {
+        this.liqueur = liqueur;
     }
 
     /**
@@ -45,29 +43,29 @@ public class Liqueur extends Sweet {
     @Override
     public String toString() {
         String str = super.toString() +
-                "Amount of liqeueur: " + this.getLiqueur() + "\n";
+                "Amount of liqueur: " + this.getLiqueur() + "\n";
         return str;
     }
 
     /**
-     * @param liqeueurSweet
+     * @param liqueurSweet
      * @return
      */
     @Override
-    public boolean equals(Object liqeueurSweet){
-        if(this == liqeueurSweet){
+    public boolean equals(Object liqueurSweet){
+        if(this == liqueurSweet){
             return true;
-        }if(liqeueurSweet == null){
+        }if(liqueurSweet == null){
             return false;
         }
-        if(getClass() != liqeueurSweet.getClass()){
+        if(getClass() != liqueurSweet.getClass()){
             return false;
         }
-        if(!super.equals(liqeueurSweet)){
+        if(!super.equals(liqueurSweet)){
             return false;
         }
-        Liqueur other = (Liqueur)liqeueurSweet;
-        if(this.liqeueur != other.liqeueur){
+        Liqueur other = (Liqueur)liqueurSweet;
+        if(this.liqueur != other.liqueur){
             return false;
         }
         return true;
@@ -79,7 +77,7 @@ public class Liqueur extends Sweet {
     @Override
     public int hashCode(){
         final int prime = 31;
-        int result = super.hashCode()*prime + (int)this.liqeueur;
+        int result = super.hashCode()*prime + (int)this.liqueur;
         return result;
     }
 

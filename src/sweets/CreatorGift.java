@@ -1,9 +1,8 @@
-package giftCreator;
+package sweets;
 
 import comparators.SweetPriceComparator;
 import comparators.SweetSugarComparator;
 import comparators.SweetWeightComparator;
-import sweets.Sweet;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -35,8 +34,8 @@ public class CreatorGift {
      * @return sorted gift
      */
     public Gift sortBySugar() {
-        SweetSugarComparator comp = new SweetSugarComparator();
-        this.gift.getGift().sort(comp);
+        SweetSugarComparator sweetSugarComparator = new SweetSugarComparator();
+        this.gift.getGift().sort(sweetSugarComparator);
         return this.gift;
     }
 
@@ -44,8 +43,8 @@ public class CreatorGift {
      * @return sorted gift
      */
     public Gift sortByPrice() {
-        SweetPriceComparator comp = new SweetPriceComparator();
-        this.gift.getGift().sort(comp);
+        SweetPriceComparator sweetPriceComparator = new SweetPriceComparator();
+        this.gift.getGift().sort(sweetPriceComparator);
         return this.gift;
     }
 
@@ -53,8 +52,8 @@ public class CreatorGift {
      * @return sorted gift
      */
     public Gift sortByWeight() {
-        SweetWeightComparator comp = new SweetWeightComparator();
-        this.gift.getGift().sort(comp);
+        SweetWeightComparator sweetWeightComparator = new SweetWeightComparator();
+        this.gift.getGift().sort(sweetWeightComparator);
         return this.gift;
     }
 
@@ -66,14 +65,14 @@ public class CreatorGift {
      * @return list of sweets
      */
     public List<Sweet> searchSweet(double price, double sugar, double weight){
-        List<Sweet> list = new LinkedList<>();
+        List<Sweet> sweetList = new LinkedList<>();
         for(Sweet sweet: this.gift.getGift()){
             if(sweet.getPrice() <= price && sweet.getSugar() <= sugar &&
                     sweet.getWeight() <= weight){
-                list.add(sweet);
+                sweetList.add(sweet);
             }
         }
-        return list;
+        return sweetList;
     }
 
     /**Count weight of gift
@@ -81,8 +80,8 @@ public class CreatorGift {
      */
     public double totalWeight() {
         double weight = 0;
-        for (Sweet elem : this.gift.getGift()) {
-            weight += elem.getWeight();
+        for (Sweet sweet : this.gift.getGift()) {
+            weight += sweet.getWeight();
         }
         return weight;
     }

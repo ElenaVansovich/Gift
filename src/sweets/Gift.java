@@ -1,6 +1,4 @@
-package giftCreator;
-
-import sweets.Sweet;
+package sweets;
 
 import java.util.ArrayList;
 import java.util.List;

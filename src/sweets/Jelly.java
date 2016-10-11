@@ -1,6 +1,4 @@
-package sweetTypes;
-
-import sweets.Sweet;
+package sweets;
 
 /**
  * Created by Elena on 10.10.2016.
